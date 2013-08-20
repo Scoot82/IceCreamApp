@@ -1,0 +1,11 @@
+<h1>Ice Cream For Sale!</h1>
+<p>
+	This is a list of our ice creams:
+</p>
+
+<% @icecream.each do |x| %>
+	<%= link_to x.name, x %>
+	<%= x.price %>
+<% end %>	
+<br></br>
+<%= link_to "Add a Flavor", new_icecream_path %>

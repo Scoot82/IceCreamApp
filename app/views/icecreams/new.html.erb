@@ -1,0 +1,13 @@
+<h1>Add a new flavor</h1>
+
+<%= form_for @icecream do |icecream| %> 
+	<%= icecream.label :name %>
+	<%= icecream.text_field :name %>
+	
+	<%= icecream.label :price %>
+	<%= icecream.text_field :price %>
+	
+	<%= icecream.submit "Add Flavor!"%>
+<% end %>
+
+<%= link_to "Home", icecreams_path %>

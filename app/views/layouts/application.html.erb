@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IceCreamApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<% if flash[:alert].present? %>
+	<p style="color: white; background: red; padding: 6px"><%= flash[:alert] %></p>
+	
+	<% @icecream.errors.full_messages.each do |msg| %>
+		<ul>
+		<li><%= msg %></li>
+		</ul>
+	<% end %>
+	
+<% elsif flash[:notice].present? %>
+	<p style="color: white; background:green; padding: 6px"><%= flash[:notice] %></p>
+<% end %>
+
+
+<%= yield %>
+
+</body>
+</html>

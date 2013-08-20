@@ -1,0 +1,8 @@
+<h1>Listing for <%= @icecream.name %></h1>
+<p>
+	Price: $<%= @icecream.price%>
+</p>
+
+<%= link_to "Edit", edit_icecream_path %>
+<%= link_to "Delete", icecream_path(@icecream.id), method: 'delete' %>
+<%= link_to "Home", icecreams_path %>
