@@ -8,6 +8,14 @@
 </head>
 <body>
 	
+<% if @user %>
+	<p>Hello, <%= @user.name %>
+		<%= link_to "Logout", logout_url, :method => :delete %>
+		</p>
+<% else %>
+	<%= link_to "Login", new_session_url %>
+<% end %>
+	
 <% if flash[:alert].present? %>
 	<p style="color: white; background: red; padding: 6px"><%= flash[:alert] %></p>
 	

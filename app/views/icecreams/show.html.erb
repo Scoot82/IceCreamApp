@@ -3,6 +3,9 @@
 	Price: $<%= @icecream.price%>
 </p>
 
-<%= link_to "Edit", edit_icecream_path %>
-<%= link_to "Delete", icecream_path(@icecream.id), method: 'delete' %>
+<% if @user %>	
+	<%= link_to "Edit", edit_icecream_path %>
+	<%= link_to "Delete", icecream_path(@icecream.id), method: 'delete', confirm: "Are you sure?" %>
+<% end %>
+
 <%= link_to "Home", icecreams_path %>

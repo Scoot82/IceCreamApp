@@ -1,5 +1,7 @@
 class IcecreamsController < ApplicationController
   
+  before_filter :require_login, :only => [:new, :create, :edit, :destroy]
+  
   def index
     @icecream = Icecream.all
   end

@@ -3,9 +3,14 @@
 	This is a list of our ice creams:
 </p>
 
+<% if @icecream.empty? %>
+	<%= "We currently do not have any ice cream for sale." %>
+<% end %>	
+	
 <% @icecream.each do |x| %>
 	<%= link_to x.name, x %>
 	<%= x.price %>
 <% end %>	
+
 <br></br>
 <%= link_to "Add a Flavor", new_icecream_path %>
