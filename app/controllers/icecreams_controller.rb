@@ -19,7 +19,7 @@ class IcecreamsController < ApplicationController
     else
       flash[:alert] = "Something went wrong, try again!"
       render :new
-    end    
+    end
   end
   
   def show

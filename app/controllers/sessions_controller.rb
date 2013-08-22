@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_login(params['login'])
+    user = User.find_by_login(params[:login])
     if user
       if user.authenticate(params[:password])
         flash[:notice] = "Hello, #{user.name}!"
@@ -24,3 +24,9 @@ class SessionsController < ApplicationController
     redirect_to icecreams_url, notice: "See ya!"
   end
 end
+
+# Add gem bcrypt (gives us authenticate method) + need to have a password_digest column in database
+# Add has_secure_password to User model
+# Create a 'sessions' controller with new, create, destroy
+# Create routes
+

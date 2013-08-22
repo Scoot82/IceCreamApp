@@ -1,13 +1,20 @@
 <h1>Add a new flavor</h1>
 
-<%= form_for @icecream do |icecream| %> 
+<%= form_for @icecream, html: { multipart: true } do |icecream| %> 
 	<%= icecream.label :name %>
 	<%= icecream.text_field :name %>
-	
-	<%= icecream.label :price %>
-	<%= icecream.text_field :price %>
-	
-	<%= icecream.submit "Add Flavor!"%>
+	<p>
+		<%= icecream.label :price %>
+		<%= icecream.text_field :price %>
+	</p>
+	<p>
+		<%= icecream.file_field :image %>
+	</p>
+	<p>
+		<%= icecream.label :remote_image_url, "or image URL" %>
+		<%= icecream.text_field :remote_image_url %>
+	</p>
+		<%= icecream.submit "Add Flavor!"%>
 <% end %>
 
 <%= link_to "Home", icecreams_path %>

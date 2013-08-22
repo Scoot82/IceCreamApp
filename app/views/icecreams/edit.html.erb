@@ -1,11 +1,14 @@
 <h1>Editing listing: <%= @icecream.name %></h1>
 
-<%= form_for @icecream do |icecream| %>
+<%= form_for @icecream, html: { multipart: true } do |icecream| %>
 	<%= icecream.label :name %>
 	<%= icecream.text_field :name %>
-	
+	<p>
 	<%= icecream.label :price %>
 	<%= icecream.text_field :price %>
-	
+	</p>
+	<%= icecream.file_field :image %>
+	<p>
 	<%= icecream.submit "Update Flavor!"%>
+	</p>
 <% end %>
